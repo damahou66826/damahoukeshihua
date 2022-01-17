@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>3D魔方</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html, body{
+				height: 100%;
+			}
+			html{
+				font-size: 5vw;
+			}
+			body{
+				display: flex;
+			}
+			#box{
+				height: 12.5rem;
+				width: 12.5rem;
+				margin: auto;
+				position: relative;
+				transform-style: preserve-3d;
+				animation: zhuanqilai 5s infinite;
+				transform: rotateY(20deg);
+			}
+			@keyframes zhuanqilai{
+				0%{
+					transform: rotateX(30deg) rotateY(60deg);
+				}
+				33.3%{
+					transform: rotateX(180deg) rotateY(210deg);
+				}
+				66.6%{
+					transform: rotateX(330deg) rotateY(360deg);
+				}
+				100%{
+					transform: rotateX(30deg) rotateY(60deg);
+				}
+			}
+			#box>div{
+				height: 9.375rem;
+				width: 9.375rem;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -4.6875rem;
+				margin-left: -4.6875rem;
+			}
+			#box>div:nth-child(1){
+				transform: translateZ(4.6875rem);
+			}
+			#box>div:nth-child(2){
+				transform: translateZ(-4.6875rem);
+			}
+			#box>div:nth-child(3){
+				transform: translateY(4.6875rem) rotateX(90deg);
+			}
+			#box>div:nth-child(4){
+				transform: translateY(-4.6875rem) rotateX(90deg);
+			}
+			#box>div:nth-child(5){
+				transform: translateX(4.6875rem) rotateY(90deg);
+			}
+			#box>div:nth-child(6){
+				transform: translateX(-4.6875rem) rotateY(90deg);
+			}
+			#box>div img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div><img src="1.jpg"> </div>
+			<div><img src="2.jpg"></div>
+			<div><img src="3.jpg"></div>
+			<div><img src="4.jpg"></div>
+			<div><img src="5.jpg"></div>
+			<div><img src="6.jpg"></div>
+		</div>
+	</body>
+</html>
